@@ -2,9 +2,9 @@ const {default:mongoose}=require('mongoose');
 const Course = require ('../Models/coursemodel');
 
 const addCourse = async (req, res) => {
-    const { name, duration } = req.body;
+    const { timing, courseName } = req.body;
     try {
-        const course = await Course.create({ name, duration });
+        const course = await Course.create({ timing, courseName });
         res.status(201).send({ message: "Course added." })
     } catch (error) {
         res.status(500).send({ message: 'error occured', error: error });

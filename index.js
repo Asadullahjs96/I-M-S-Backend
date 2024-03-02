@@ -8,6 +8,13 @@ require('dotenv').config()
 
 const port = process.env.PORT || 3000
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Internal Server Error');
+});
+
+
 //Middleware
 app.use(cors())
 app.use(express.json());

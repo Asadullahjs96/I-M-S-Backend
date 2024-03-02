@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const courseSchema = new Schema({
-    name: {
+    courseName: {
         type: String,
-        required: true
-    },
-    duration: {
-        type: Number,
-        default: 6,
-    }
+        required: true,
+      },
+      timing: {
+        type: String,
+        required: true,
+      },
 })
 
 module.exports = mongoose.model('Course', courseSchema);
